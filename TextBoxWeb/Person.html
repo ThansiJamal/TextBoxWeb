@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body>
+    <div>
+        <label>Name1:</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtName1" />
+        <label>Name2:</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtName2" /><br />
+        <label>Place1:</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtPlace1" />
+        <label>Place2:</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="txtPlace2" /><br />
+        <label>Pincode1:</label>
+        <input type="text" id="txtPin1" />
+        <label>Pincode2:</label>
+        &nbsp;&nbsp;<input type="text" id="txtPin2" /><br /><br />
+        &nbsp;&nbsp;<button type="button" class="btn btn-primary" id="btnOk">Ok</button>
+        <button type="button" class="btn btn-primary" id="btnClear">Clear</button><br />
+        <label id="lblText">Iam</label>
+        <style>
+
+            label {
+                /*border: 2px solid powderblue;*/
+                padding: 20px;
+                /* position:absolute;*/
+            }
+        </style>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnOk").click(function () {
+            var name1 = $("#txtName1").val();
+            document.getElementById("txtName2").value = name1;
+            document.getElementById("txtPlace2").value = $("#txtPlace1").val();
+            document.getElementById("txtPin2").value = $("#txtPin1").val();
+            //var text = $("#lblText").text("Iam") + $("#lblText") .html(name1);
+            //document.getElementById("lblText").value = text;
+            var t = $("#lblText").text("Iam");
+            document.getElementById("lblText").value = $("#lblText").html(name1); ;
+        });
+        $("#btnClear").click(function () {
+            document.getElementById("txtName1").value = '';
+            document.getElementById("txtPlace1").value = '';
+            document.getElementById("txtPin1").value = '';
+            document.getElementById("txtName2").value = '';
+            document.getElementById("txtPlace2").value = '';
+            document.getElementById("txtPin2").value = '';
+            document.getElementById("lblText").value = '';
+        });
+
+    });
+</script>
